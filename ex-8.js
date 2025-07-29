@@ -374,5 +374,18 @@ const bills = [
 ];
 
 // Start coding here
+const carCollection = ["toyota", "fiat", "honda", "bmw"];
 
-const totalPaidByLocation;
+function updateCarCollection(carBrand) {
+  const brandLower = carBrand.toLowerCase();
+
+  if (carCollection.includes(brandLower)) {
+    const index = carCollection.indexOf(brandLower);
+    return `${carBrand} has already existed in the ${index + 1} position of car collection.`;
+  } 
+  carCollection.push(brandLower);
+  return `New car collection is: ${carCollection.join(", ")}.`;
+}
+
+console.log(updateCarCollection("audi"));
+console.log(updateCarCollection("toyota"));
